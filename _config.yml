@@ -13,10 +13,11 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: GSoC at DBpedia by vfrico
+title: GSoC18 at DBpedia
 email: vfrico@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Google Summer of Code for DBpedia updates made by Víctor Fernández
+  This blog contains the latest updates of my project to detect incorrect mappings
+  on different DBpedias, as part of the Google Summer of Code 2018
 baseurl: "/dbpedia-gsoc-18/" # the subpath of your site, e.g. /blog
 url: "https://vfrico.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: vfrico
