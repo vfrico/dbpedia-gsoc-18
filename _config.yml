@@ -5,7 +5,7 @@
 
 # If you are building a simple GitHub user page (http://username.github.io) then use these settings:
 url: "https://vfrico.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
-baseurl: "/dbpedia-gsoc-18/" # the subpath of your site, e.g. /blog
+baseurl: "/dbpedia-gsoc-18" # the subpath of your site, e.g. /blog
 
 # If you are building a GitHub project page then use these settings:
 #url: "http://username.github.io/projectname"
