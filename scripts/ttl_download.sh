@@ -20,8 +20,8 @@
 # process.
 
 if [ "$#" -lt 3 ]; then
-    echo "graph_reif - Automates the download and tql reification process"
-    echo "Usage: graph_reif.sh <graph_name> <graph_uri> <list of bz2 uris from graph>"
+    echo "ttl_download - Automates the download to a single graph"
+    echo "Usage: ttl_download.sh <graph_name> <graph_uri> <destination_name> <http origin>"
     echo ""
     echo "The list of uris can contain .ttl or .tql. On the latter case, a reification"
     echo "process will start"
@@ -29,15 +29,11 @@ if [ "$#" -lt 3 ]; then
     exit 1;
 fi
 
-# Refication script:
-# tql2reif.sh script can be found on:
-#    https://gist.github.com/nandana/7cea0f4d990696465e9b4b21e5f1485e
-REIF_SCRIPT="./tql2reif.sh"
-
 
 GRAPH_NAME="$1"
 GRAPH_URI="$2"
-URIS="${@:3}"
+URIS="$4"
+NAME="$3"
 
 mkdir -p $GRAPH_NAME
 if [ ! -d "$GRAPH_NAME" ]; then
@@ -50,28 +46,5 @@ cd $GRAPH_NAME
 # Write the graph name
 echo $GRAPH_URI > global.graph
 
-# Download and unzip files
-for line in ${URIS[@]}; do
-	echo -e "\n---\nProcessing file $line\n---\n"
+wget -O $NAME $URI
 
-	# Removes the path from the URI
-	FILENAME="${line##*/}"
-	wget "$line"
-	
-	echo "Unzipping TQL"
-	bunzip2 -v "$FILENAME"
-	
-	UNZIPPED_NAME="$(basename $FILENAME .bz2)"
-	
-	FILE_EXTENSION="${UNZIPPED_NAME##*.}"
-
-	# If file is .tql, it must be reified
-	if [ $FILE_EXTENSION == "tql" ]; then
-		TTL_FILE="$(basename $FILE_EXTENSION .tql)"_r.ttl
-		echo "Refication of the TQL file"
-		$REIF_SCRIPT $UNZIPPED_NAME > $TTL_FILE
-		# Delete .tql file
-		rm $UNZIPPED_NAME
-	fi
-	# If the file is .ttl, nothing is required
-done
