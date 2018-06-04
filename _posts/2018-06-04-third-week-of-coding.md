@@ -2,6 +2,7 @@
 layout: post
 published: false
 title: Third week of coding
+date: '2018-06-01'
 ---
 On this week, I have been focused mainly on two different tasks:
 
