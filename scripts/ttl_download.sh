@@ -32,7 +32,7 @@ fi
 
 GRAPH_NAME="$1"
 GRAPH_URI="$2"
-URIS="$4"
+URI="$4"
 NAME="$3"
 
 mkdir -p $GRAPH_NAME
@@ -47,4 +47,3 @@ cd $GRAPH_NAME
 echo $GRAPH_URI > global.graph
 
 wget -O $NAME $URI
-
