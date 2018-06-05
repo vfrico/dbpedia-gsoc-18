@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: Third week of coding
 date: '2018-06-01'
 ---
