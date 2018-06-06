@@ -16,8 +16,8 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 #
-# Automates the download of .ttl.bz2 or .tql.bz2 files and reification
-# process.
+# Generates a folder named $1 and a file global.graph, used by virtuoso
+# to dump triples massively
 
 if [ "$#" -lt 3 ]; then
     echo "ttl_download - Automates the download to a single graph"
