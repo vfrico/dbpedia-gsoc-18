@@ -10,10 +10,11 @@
       {% if site.title-img %}
         <a class="navbar-brand navbar-brand-logo" href="{{ site.url }}{{ site.baseurl}}"><img src="{{ site.title-img }}"/></a>
       {% else %}
-        <a class="navbar-brand" href="{{ site.url }}{{ site.baseurl}}">{{ site.title }}</a>
+      {% assign partial_uri = site.baseurl | replace: "/", "" %}
+      {% assign full_uri = site.url | append: "/" | append: partial_uri | append: "/" %}
+        <a class="navbar-brand" href="{{ full_uri }}">{{ site.title }}</a>
       {% endif %}
     </div>
-
     <div class="collapse navbar-collapse" id="main-navbar">
       <ul class="nav navbar-nav navbar-right">
       {% for link in site.navbar-links %}
