@@ -7,7 +7,7 @@ date: '2018-06-15'
 
 On this sixth week of coding, we (my mentors and I) have focused more on writing a paper than implementing the web application. To be more precise, we are extending the redaction of the original paper to include more results (as explained on the post of the past week) and also to include a detailed description of the system architecture that implements the proposed classifier solution.
 
-![System architecture] (https://raw.githubusercontent.com/vfrico/dbpedia-gsoc-18/gh-pages/img/system_architecture.png "System architecture")
+![System architecture]( https://raw.githubusercontent.com/vfrico/dbpedia-gsoc-18/gh-pages/img/system_architecture.png "System architecture")
 
 This image shows up the system architecture that we will implement.
 
