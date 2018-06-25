@@ -1,31 +1,13 @@
 ---
 layout: post
 published: true
-title: First week coding
-date: '2018-06-07'
+title: First REST Server implementation
+date: '2018-06-22'
 ---
-# Review of my first month on GSoC
+On this 7th week, I have been working on implementing the REST services that will support all the web application. I have mock documentation of each one of the services on this [document](https://docs.google.com/document/d/1iR06rMcFrY0SMPCbucXmjl-plx7YQuaG9KwVTHXBtBM/edit?usp=sharing). Sorry, it is in Spanish, but I use it as a guide. I plan to publish more detailed documentation with examples of each endpoint.
 
-After this four weeks since coding started on this edition of Google Summer of Code, and especially on the last week, I have learned how DBpedia works and releases new versions. Also, I have learned to create a server using Virtuoso and replicate the DBpedia's SPARQL endpoint.
+I have also done an Entity Relation diagram, as we will use a relational database like MySQL to store the user annotations. This process is essential, as we need to plan this kind of things before to start coding and discovering a problem tough to solve without changing the whole project foundations.
 
-On this last week, I've also met with my mentors on DBpedia and talked about my progress. We have decided that I should focus more on my results rather than on the infrastructure part.
+![Entity-relation diagram](https://raw.githubusercontent.com/vfrico/dbpedia-gsoc-18/gh-pages/img/img/entity-relation.png)
 
-I've also been annotating more examples to add extra instances to the original dataset. This is an essential task because if we succeed in adding more instances and getting the same accuracy, we can ensure that the application to detect incorrect mappings will work as expected.
-
-At the moment of writing, the tests have shown a slight decrease on accuracy with the Random Trees classifier, but this can be because I couldn't replicate at all the same metrics on the dataset offered on the paper.
-
-To solve this last issue, I am working with one of my mentors, Nandana, and he is helping me to build a dataset correctly with correct metrics.
-
-Anyway, there is no reason to alarm: although the classifier's precision is lower, it still shows acceptable values.
-
-
-So far, I've got the following results:
-
-
-| Classifier | Correct % | Precission | Recall | AUC ROC | Comments |
-| --- | --- | --- | --- |
-| Random Forest | 86.7% | 0.724 | 0.656 | 0.914 | default params in weka |
-| MultiLayerPerceptron | 82.5% | 0.6 | 0.656 | 0.83 | L=0.3, M=0.12, H="a,18", N=5000 |
-
-
-If we look at the area under the ROC curve, results are quite similar to the ones published in the original paper: 0.91 vs 0.96.
+The whole service is being coded with Java, as is an open source language, is easy to use and has many useful libraries that can be connected easily with our project. I expect that this circumstance also helps us to evaluate each mapping with a classifier that depends on Weka. You can check out the code on the specific Github [repository](https://github.com/vfrico/mapping-predictor-backend) of this project.
