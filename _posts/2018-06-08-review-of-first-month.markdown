@@ -1,10 +1,9 @@
 ---
 layout: post
 published: true
-title: First week coding
+title: Review of my first month on GSoC
 date: '2018-06-07'
 ---
-# Review of my first month on GSoC
 
 After this four weeks since coding started on this edition of Google Summer of Code, and especially on the last week, I have learned how DBpedia works and releases new versions. Also, I have learned to create a server using Virtuoso and replicate the DBpedia's SPARQL endpoint.
 
