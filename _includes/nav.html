@@ -10,8 +10,9 @@
       {% if site.title-img %}
         <a class="navbar-brand navbar-brand-logo" href="{{ site.url }}{{ site.baseurl}}"><img src="{{ site.title-img }}"/></a>
       {% else %}
-      {% assign partial_uri = site.baseurl | replace: "/", "" %}
-      {% assign full_uri = site.url | append: "/" | append: partial_uri | append: "/" %}
+      {% assign prev_uri = site.url | append: site.baseurl | replace: "http://", "" | replace: "https://", "" %}
+      {% assign clean_uri = prev_uri | replace: "//", "/" %}
+      {% assign full_uri = "https://" | append: clean_uri %}
         <a class="navbar-brand" href="{{ full_uri }}">{{ site.title }}</a>
       {% endif %}
     </div>
