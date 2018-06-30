@@ -1,11 +1,13 @@
 ---
 layout: post
-published: false
-title: Backend REST implementation
+published: true
+title: Backend REST implementation and first tests with Docker
 date: '2018-06-29'
 ---
 
---- TODO
+On this week, the project is going forward. I have started to put all the backend on a Docker container, to facilitate the deployment on the future. Once this configuration has been finished, I will be able to work more focused on the code, as I could run the application easily wherever I need.
+
+Apart from *dockerising* the backend, I also have been adding the MySQL connectivity. The MySQL server will be a component inside the system, so is an additional Docker container.
 
 I also have some comments to do about the next DBpedia release. On the Slack channel, we are discussing the different datasets that will be available to download and the changes with respect to the previous one, which has about one year and a half old.
 
