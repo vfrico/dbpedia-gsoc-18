@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: Combining MySQL and Jersey API
 date: '2018-07-06'
 ---
