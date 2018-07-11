@@ -1,7 +1,7 @@
 ---
 layout: post
 published: true
-title: Paper redaction week
+title: Architecture definition
 date: '2018-06-15'
 ---
 On this sixth week of coding, I have focused on defining the overall architecture of the system. It has been resumed on the following image:
