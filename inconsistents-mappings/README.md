@@ -58,7 +58,7 @@ It may be needed to change the SPARQL endpoint constant
 also in other classes, like DBO class.
 
 ## Work done under the GSoC 2018
-The work done by Nandana was almost ready for production, 
+The work done by Mihindukulasooriya et al. was almost ready for production, 
 but it still worked weirdly on some executions and 
 some attribute names were interchanged, so the CSV file
 wasn't consistent with the published attributes.
