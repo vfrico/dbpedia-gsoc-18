@@ -2,7 +2,7 @@
 
 ## Work done
 * Bash scripts and other resources that help to generate RDF graphs to load in Virtuoso
-* Refinement of code from previous Nandana's Work to generate pairs of annotation from DBpedia mappings and SPARQL queries:
+* Refinement of code from previous Mihindukulasooriya's work et al. to generate pairs of annotation from DBpedia mappings and SPARQL queries:
     * The code has been tested and updated, to ensure it still works.
 * Creation of a Java API that allows storing annotations, users can vote them and can be classified as correct or wrong by using Random Forest's Weka classifier.
 * Creation of a Web application that consumes the API and exposes an easy interface for users to help in the annotation and mapping process.
@@ -23,7 +23,7 @@ In this section, you can access the links to each product. Each product itself s
 
   * SPARQL & Bash scripts: resources available on [vfrico/dbpedia-gsoc-18](https://github.com/vfrico/dbpedia-gsoc-18/tree/master/scripts)
 
-  * Java project that generates CSV files with annotations and classifier features, named *TB{1-11}*, *C{1-4}* and *M{1-5}*. Available also on: [vfrico/dbpedia-gsoc-18](https://github.com/vfrico/dbpedia-gsoc-18/tree/master/inconsistents-mappings). Note: this product is derived from [Nandana](https://github.com/nandana)'s previous work, as stated on the source code files. This work is licensed under Apache 2.0 License.
+  * Java project that generates CSV files with annotations and classifier features, named *TB{1-11}*, *C{1-4}* and *M{1-5}*. Available also on: [vfrico/dbpedia-gsoc-18](https://github.com/vfrico/dbpedia-gsoc-18/tree/master/inconsistents-mappings). Note: this product is derived from [Mihindukulasooriya et al.](https://github.com/nandana)'s previous work, as stated on the source code files. This work is licensed under Apache 2.0 License.
 
 * Web application and API to manage annotations votes and classification:
 
