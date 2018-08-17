@@ -10,3 +10,4 @@ On the `scripts` folder, you can find several scripts to generate training datas
 More at
 * [vfrico/mapping-predictor-backend](https://github.com/vfrico/mapping-predictor-backend)
 * [vfrico/mapping-predictor-webapp](https://github.com/vfrico/mapping-predictor-webapp)
+* [vfrico/dbpedia-gsoc-18/inconsistents-mappings](https://github.com/vfrico/dbpedia-gsoc-18/tree/master/inconsistents-mappings)
