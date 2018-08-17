@@ -6,3 +6,7 @@ on DBpedia throughout the Google Summer of Code 2018.
 The branch `gh-pages` contains the sources of the blog.
 
 On the `scripts` folder, you can find several scripts to generate training datasets and other useful stuff
+
+More at
+* [vfrico/mapping-predictor-backend](https://github.com/vfrico/mapping-predictor-backend)
+* [vfrico/mapping-predictor-webapp](https://github.com/vfrico/mapping-predictor-webapp)
