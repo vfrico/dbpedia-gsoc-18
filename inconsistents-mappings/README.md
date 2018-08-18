@@ -58,7 +58,4 @@ It may be needed to change the SPARQL endpoint constant
 also in other classes, like DBO class.
 
 ## Work done under the GSoC 2018
-The work done by Nandana was almost ready for production, 
-but it still worked weirdly on some executions and 
-some attribute names were interchanged, so the CSV file
-wasn't consistent with the published attributes.
+This project is based on the proposal made by the mentors of this GSoC project  ([N. Mihindukulasooriya](https://github.com/nandana) and [M. Rico](https://github.com/MarianoRico)). Compared to the publication entitled "Predicting Incorrect Mappings: A Data-Driven Approach Applied to DBpedia" in which there are links to the datasets (https://www.openml.org/s/53), some attribute names and order has been changed. Therefore, the CSV file is not identical to the one published.

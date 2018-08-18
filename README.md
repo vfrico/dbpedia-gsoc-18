@@ -6,3 +6,42 @@ on DBpedia throughout the Google Summer of Code 2018.
 The branch `gh-pages` contains the sources of the blog.
 
 On the `scripts` folder, you can find several scripts to generate training datasets and other useful stuff
+
+## Delivered products
+
+In this section, you can access the links to each product. Each product itself should contain a more detailed explanation of how it works.
+
+### Generate annotations from SPARQL
+The expected output is a CSV file that can be interpreted by the Web interface (both backend and frontend).
+
+An annotation is a relation between two templates and attributes in two languages, which after a transformation process will be related to a RDF property. The CSV file contains the template, attribute and property of each annotations, and all calculated classifier features, named *TB{1-11}*, *C{1-4}* and *M{1-5}*.
+
+To generate this file, two kind of resources are available:
+
+* SPARQL & Bash scripts to build n-triples files to be used by a triple store (as Virtuoso) [vfrico/dbpedia-gsoc-18](https://github.com/vfrico/dbpedia-gsoc-18/tree/master/scripts)
+
+* Java project that generates CSV files with annotations and  [vfrico/dbpedia-gsoc-18](https://github.com/vfrico/dbpedia-gsoc-18/tree/master/inconsistents-mappings). Note: this product is derived from [Nandana](https://github.com/nandana)'s previous work, as stated on the source code files. This work is licensed under Apache 2.0 License.
+
+### Web application and API to manage annotations votes and classification
+This part of the work needs CSV files with the annotations as input, and will present a Web interface to allow users vote annotations and manage classification results.
+
+* Web App: Built with Node.js, and uses React.js as a DOM framework.
+
+  * Source code on: [vfrico/mapping-predictor-webapp](https://github.com/vfrico/mapping-predictor-webapp)
+
+  * Docker image on: [vfrico/dbpedia-mappings-webapp](https://hub.docker.com/r/vfrico/dbpedia-mappings-webapp/)
+
+* Backend API: Built with JavaEE (Glassfish) and Jersey REST Framework
+
+  * Source code available on: [vfrico/mapping-predictor-backend](https://github.com/vfrico/mapping-predictor-backend)
+
+  * Docker image available on: [vfrico/dbpedia-mappings-backend](https://hub.docker.com/r/vfrico/dbpedia-mappings-backend/)
+
+  * API documentation available on: [Github pages](https://vfrico.github.io/mapping-predictor-backend/)
+
+  * [Docker-compose](https://docs.docker.com/compose/) file, to deploy all the client application with one-click. It may be necessary to edit the two environment variables that refer to Backend API and SPARQL endpoint. Available on: [vfrico/mapping-predictor-backend](https://github.com/vfrico/mapping-predictor-backend/blob/master/docker-compose.yml)
+
+## Architecture
+This image shows the architecture of all the modules.
+
+![System architecture]( https://raw.githubusercontent.com/vfrico/dbpedia-gsoc-18/gh-pages/img/system_architecture.png "System architecture")
