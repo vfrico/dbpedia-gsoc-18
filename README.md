@@ -7,6 +7,12 @@ The branch `gh-pages` contains the sources of the blog.
 
 On the `scripts` folder, you can find several scripts to generate training datasets and other useful stuff
 
+
+## More at
+* [vfrico/mapping-predictor-backend](https://github.com/vfrico/mapping-predictor-backend)
+* [vfrico/mapping-predictor-webapp](https://github.com/vfrico/mapping-predictor-webapp)
+* [vfrico/dbpedia-gsoc-18/inconsistents-mappings](https://github.com/vfrico/dbpedia-gsoc-18/tree/master/inconsistents-mappings)
+
 ## Delivered products
 
 In this section, you can access the links to each product. Each product itself should contain a more detailed explanation of how it works.

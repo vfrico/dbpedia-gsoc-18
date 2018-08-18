@@ -1,11 +1,11 @@
 # Inconsistent mappings
 
-*This project is part of my work done during my Google 
+*This project is part of my work done during my Google
 Summer of Code 2018 in collaboration with DBpedia*
 
-This repository contains the code needed to generate 
+This repository contains the code needed to generate
 a CSV with the annotations on a language pair.
-Before running any code here, please, read the 
+Before running any code here, please, read the
 instructions to build a virtuoso endpoint and load
 the recommended triples and graphs.
 
@@ -24,7 +24,7 @@ server, as well as we also will need some additional
 triples that are not available by default on original
 endpoints.
 
-[This script](https://github.com/vfrico/dbpedia-gsoc-18/blob/master/scripts/launch_reif.sh) will download and reify triples for the 
+[This script](https://github.com/vfrico/dbpedia-gsoc-18/blob/master/scripts/launch_reif.sh) will download and reify triples for the
 english and spanish DBpedia.
 
 As we can observe by reading it, we need the following graphs for each language
@@ -34,28 +34,29 @@ As we can observe by reading it, we need the following graphs for each language
 
 We will use a different URIs for different languages. In the
 example, if we use the spanish language, we would load
-`http://es.dbpedia.org/`, `http://es.dbpedia.org/r` 
-and `http://es.dbpedia.org/rml` graphs 
+`http://es.dbpedia.org/`, `http://es.dbpedia.org/r`
+and `http://es.dbpedia.org/rml` graphs
 
 Additonally, the DBpedia ontology is needed to infer
 class hierarchy between properties and classes.
 
 For the virtuoso configuration, you can use the virtuoso.ini
 file that exists inside this folder. It should not been used
-as a drop in replacement of installed .ini, but as a 
+as a drop in replacement of installed .ini, but as a
 reference to fix problems, if any exist.
 
 
 ## Program execution
-To execute the program and produce the needed annotations 
-CSV file, you only have to run the `InconsistentMappings` 
+To execute the program and produce the needed annotations
+CSV file, you only have to run the `InconsistentMappings`
 class, starting on the main method.
 
-The params to edit are the SPARQL endpoint and the 
+The params to edit are the SPARQL endpoint and the
 RDF graphs to use with each language.
 
 It may be needed to change the SPARQL endpoint constant
 also in other classes, like DBO class.
 
 ## Work done under the GSoC 2018
+
 This project is based on the proposal made by the mentors of this GSoC project  ([N. Mihindukulasooriya](https://github.com/nandana) and [M. Rico](https://github.com/MarianoRico)). Compared to the publication entitled "Predicting Incorrect Mappings: A Data-Driven Approach Applied to DBpedia" in which there are links to the datasets (https://www.openml.org/s/53), some attribute names and order has been changed. Therefore, the CSV file is not identical to the one published.
