@@ -23,23 +23,23 @@ def re_split(s):
 
 def split_quads(s):
     try:
-    return rquads.match(s).groups()
+        return rquads.match(s).groups()
     except Exception as exc:
-    print("No puedo parsear la línea \n{}\n porque no cumple con el formato de quad {}".format(s, regexQuads), file=sys.stderr)
-    return []
+        print("No puedo parsear la línea \n{}\n porque no cumple con el formato de quad {}".format(s, regexQuads), file=sys.stderr)
+        return []
 
 def mapToTriples(quad):
     """
     try:
-    parsed = shlex.split(quad)
+        parsed = shlex.split(quad)
     except Exception as exc:
-    print("Error al parsear "+quad)
-    print(exc)
-    parsed = quad.split()
+        print("Error al parsear "+quad)
+        print(exc)
+        parsed = quad.split()
     """
     parsed = split_quads(quad)
     if len(parsed) <= 0:
-    return [""]
+        return [""]
     subject = parsed[0]
     predicate = parsed[1]
     obj = parsed[2]
@@ -48,23 +48,23 @@ def mapToTriples(quad):
     parsed_uri = r1.match(prov)
     parsed_uri2 = r2.match(prov)
     if parsed_uri is not None:
-    print(prov, parsed_uri)
-    uri = parsed_uri.groups()[0]
-    template = parsed_uri.groups()[1]
-    attribute = parsed_uri.groups()[2]
+        print(prov, parsed_uri)
+        uri = parsed_uri.groups()[0]
+        template = parsed_uri.groups()[1]
+        attribute = parsed_uri.groups()[2]
     elif parsed_uri2 is not None:
-    parsed_uri = parsed_uri2
-    uri = parsed_uri.groups()[0]
-    template = parsed_uri.groups()[1]
-    attribute = parsed_uri.groups()[2]
+        parsed_uri = parsed_uri2
+        uri = parsed_uri.groups()[0]
+        template = parsed_uri.groups()[1]
+        attribute = parsed_uri.groups()[2]
     else:
-    print("Error reificando {}".format(quad), file=sys.stderr)
-    return [""]
+        print("Error reificando {}".format(quad), file=sys.stderr)
+        return [""]
     """
-    prov_parsed = urllib.parse.urlparse(prov[1:-1])
-    fragment_dict = urllib.parse.parse_qs(prov_parsed.fragment)
-    template = fragment_dict["template"][0]
-    attribute = fragment_dict["property"][0]
+        prov_parsed = urllib.parse.urlparse(prov[1:-1])
+        fragment_dict = urllib.parse.parse_qs(prov_parsed.fragment)
+        template = fragment_dict["template"][0]
+        attribute = fragment_dict["property"][0]
     """
 
 
@@ -85,13 +85,13 @@ def main():
     f = open(sys.argv[1])
     lineN = 0
     for l in f:
-    lineN += 1
-    # print("Linea: "+l)
-    if l[0] != "#":  # Ignoramos comentarios en el fichero
-    triples = mapToTriples(l)
-    [print(j) for j in triples]
-    if lineN % 10000 == 0:
-    print("Línea {}".format(lineN), file=sys.stderr)
+        lineN += 1
+        # print("Linea: "+l)
+        if l[0] != "#":  # Ignoramos comentarios en el fichero
+            triples = mapToTriples(l)
+            [print(j) for j in triples]
+        if lineN % 10000 == 0:
+            print("Línea {}".format(lineN), file=sys.stderr)
 
 if __name__ == '__main__':
     main()
