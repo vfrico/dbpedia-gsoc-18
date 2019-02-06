@@ -48,7 +48,7 @@ def mapToTriples(quad):
     parsed_uri = r1.match(prov)
     parsed_uri2 = r2.match(prov)
     if parsed_uri is not None:
-        print(prov, parsed_uri)
+        # print(prov, parsed_uri)
         uri = parsed_uri.groups()[0]
         template = parsed_uri.groups()[1]
         attribute = parsed_uri.groups()[2]

@@ -32,7 +32,8 @@ fi
 # Refication script:
 # tql2reif.sh script can be found on:
 #    https://gist.github.com/nandana/7cea0f4d990696465e9b4b21e5f1485e
-REIF_SCRIPT="./tql2reif.sh"
+#REIF_SCRIPT="./tql2reif.sh"
+REIF_SCRIPT="python3 ${PWD}/reif.py"
 
 
 GRAPH_NAME="$1"
@@ -57,12 +58,12 @@ for line in ${URIS[@]}; do
 	# Removes the path from the URI
 	FILENAME="${line##*/}"
 	wget "$line"
-	
+
 	echo "Unzipping TQL"
 	bunzip2 -v "$FILENAME"
-	
+
 	UNZIPPED_NAME="$(basename $FILENAME .bz2)"
-	
+
 	FILE_EXTENSION="${UNZIPPED_NAME##*.}"
 
 	# If file is .tql, it must be reified
