@@ -1,0 +1,5 @@
+
+
+ld_dir_all ('data/', '*.ttl', NULL);
+select * from DB.DBA.load_list;
+rdf_loader_run();
