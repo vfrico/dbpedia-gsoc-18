@@ -71,9 +71,9 @@ def mapToTriples(quad):
     uuid_t = uuid.uuid4()
 
     triples = ["_:{} <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement> .".format(uuid_t)]
-    triples.append("_:{} <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> {} . ".format(uuid_t, subject))
-    triples.append("_:{} <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> {}".format(uuid_t, predicate))
-    triples.append("_:{} <http://www.w3.org/ns/prov#wasDerivedFrom> {} . ".format(uuid_t, uri))
+    triples.append("_:{} <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> {} .".format(uuid_t, subject))
+    triples.append("_:{} <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> {} .".format(uuid_t, predicate))
+    triples.append("_:{} <http://www.w3.org/ns/prov#wasDerivedFrom> <{}> . ".format(uuid_t, uri))
     triples.append("_:{} <http://dbpedia.org/x-template> \"{}\" . ".format(uuid_t, template))
     triples.append("_:{} <http://dbpedia.org/x-attribute> \"{}\" . ".format(uuid_t, attribute))
 
