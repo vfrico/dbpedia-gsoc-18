@@ -1,0 +1,16 @@
+version: '3.1'
+services:
+  predictor-backend:
+    image: tenforce/virtuoso
+    ports:
+     - "8890:8890"
+    volumes:
+     - /opt/datos:/data/data
+    environment:
+      DBA_PASSWORD: "myDbaPassword"
+      SPARQL_UPDATE: "true"
+      VIRT_Parameters_NumberOfBuffer: 600000
+      VIRT_Parameters_MaxDirtyBuffers: 450000
+      VIRT_SPARQL_ResultSetMaxRows: 100000
+      VIRT_SPARQL_MaxQuerqyCostEstimationTime: 4000
+      VIRT_SPARQL_MaxQueryExecutionTime: 2000
