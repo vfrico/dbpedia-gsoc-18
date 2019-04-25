@@ -14,6 +14,9 @@ r2 = re.compile(regex2)
 regexQuads = '(<.*>) (<.*>) (.*) (<.*>) \.'
 rquads = re.compile(regexQuads)
 
+regexQuadsLiteral = '(<.*>) (<.*>) "(.*)"(<.*>) \.'
+rquadslit = re.compile(regexQuadsLiteral)
+
 def re_split(s):
     def strip_quotes(s):
         if s and (s[0] == '"' or s[0] == "'") and s[0] == s[-1]:
@@ -25,8 +28,11 @@ def split_quads(s):
     try:
         return rquads.match(s).groups()
     except Exception as exc:
-        print("No puedo parsear la línea \n{}\n porque no cumple con el formato de quad {}".format(s, regexQuads), file=sys.stderr)
-        return []
+        try:
+            return rquadslit.match(s).groups()
+        except Exception as exc:
+            print("No puedo parsear la línea \n{}\n porque no cumple con el formato de quad {} ni el formato de quad literal {}".format(s, regexQuads, regexQuadsLiteral), file=sys.stderr)
+            return []
 
 def mapToTriples(quad):
     """

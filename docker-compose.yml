@@ -2,9 +2,12 @@ version: '3.1'
 services:
   predictor-backend:
     image: tenforce/virtuoso
+    container_name: virtuosodb
+    hostname: virtuosodb
     ports:
      - "8890:8890"
     volumes:
+     - localvirtuoso:/data
      - /opt/datos:/data/data
     environment:
       DBA_PASSWORD: "myDbaPassword"
@@ -14,3 +17,5 @@ services:
       VIRT_SPARQL_ResultSetMaxRows: 100000
       VIRT_SPARQL_MaxQuerqyCostEstimationTime: 4000
       VIRT_SPARQL_MaxQueryExecutionTime: 2000
+volumes:
+  localvirtuoso:
