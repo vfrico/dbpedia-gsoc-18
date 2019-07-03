@@ -51,3 +51,34 @@ This part of the work needs CSV files with the annotations as input, and will pr
 This image shows the architecture of all the modules.
 
 ![System architecture]( https://raw.githubusercontent.com/vfrico/dbpedia-gsoc-18/gh-pages/img/system_architecture.png "System architecture")
+
+
+## Deployment (tl;dr)
+
+Execute bash script to download spanish and english dataset and reificate them
+```bash
+cd scripts/
+./launch_reif.sh
+```
+
+Put all of the data generated inside the system folder `/opt/datos`. If on further steps, problems with permissions arise, give full read and write permissions to that folder. This can be changed on `docker-compose.yml` file, inside volumes section.
+
+
+Enter the container from the host
+
+```bash
+docker exec -it virtuosodb /bin/bash
+```
+
+Inside the container, load the isql interpreter
+```bash
+isql-v -U dba -P $DBA_PASSWORD
+```
+
+Load all triples inside `data/` folder on the container (mapped from host's `/opt/datos` if following `docker-compose.yml` configuration)
+
+```sql
+ld_dir_all('data/', '*.ttl', NULL);
+select * from DB.DBA.load_list;
+rdf_loader_run();
+```
